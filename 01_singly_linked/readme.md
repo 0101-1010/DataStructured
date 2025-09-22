@@ -90,5 +90,7 @@ Ocupa mais memória (cada nó precisa de um ponteiro além do dado).
 
 Mais suscetível a erros de ponteiro (como esquecer de atualizar ou liberar memória).
 
+## Segue ilustração abaixo exemplo do funcionamento de uma lista com 3 elementos inseridos:
+
 <img width="409" height="584" alt="image" src="https://github.com/user-attachments/assets/3c78e4be-1d2f-4cca-bf3d-b932fdb5e2e9" />
 
