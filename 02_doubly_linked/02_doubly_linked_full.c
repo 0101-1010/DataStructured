@@ -3,7 +3,6 @@
 
 /*
 Lista duplamente encadeada - versão completa com operações: inserir, remover, imprimir.
-Comentários em português explicando ponteiros prev/next.
 */
 
 typedef struct DNode {
