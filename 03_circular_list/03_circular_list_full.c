@@ -11,6 +11,7 @@ typedef struct Node {
     struct Node *next;
 } Node;
 
+/* Cria um novo nó com valor v */
 Node* new_node(int v) {
     Node *n = malloc(sizeof(Node));
     if (!n) { perror("malloc"); exit(1); }
