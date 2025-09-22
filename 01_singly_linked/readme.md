@@ -40,8 +40,6 @@ Atualiza o ponteiro da lista para o novo nó.
 
 Novo nó -> Primeiro nó atual -> ...
 
-<img width="380" height="244" alt="image" src="https://github.com/user-attachments/assets/fbc972c1-209f-4876-bdf9-153083e08ae4" />
-
 No fim:
 
 Cria um novo nó com ponteiro NULL.
