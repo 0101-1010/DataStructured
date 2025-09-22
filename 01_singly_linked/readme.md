@@ -40,6 +40,7 @@ Atualiza o ponteiro da lista para o novo nó.
 
 Novo nó -> Primeiro nó atual -> ...
 
+<img width="380" height="244" alt="image" src="https://github.com/user-attachments/assets/fbc972c1-209f-4876-bdf9-153083e08ae4" />
 
 No fim:
 
@@ -48,6 +49,8 @@ Cria um novo nó com ponteiro NULL.
 Percorre a lista até o último nó.
 
 Faz o ponteiro do último nó atual apontar para o novo nó.
+
+Head -> [20 | *] -> [10 | *] -> [30 | NULL]
 
 b) Remoção
 
@@ -88,3 +91,6 @@ Acesso sequencial é mais lento que array.
 Ocupa mais memória (cada nó precisa de um ponteiro além do dado).
 
 Mais suscetível a erros de ponteiro (como esquecer de atualizar ou liberar memória).
+
+<img width="409" height="584" alt="image" src="https://github.com/user-attachments/assets/3c78e4be-1d2f-4cca-bf3d-b932fdb5e2e9" />
+
