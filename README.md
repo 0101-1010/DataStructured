@@ -23,8 +23,3 @@ Como usar:
 - Para executar localmente: compile com `gcc arquivo.c -o programa && ./programa`.
 - Para testar as versões simples no Python Tutor: abra https://pythontutor.com/c.html, cole o conteúdo do arquivo `*_simple.c` e execute (não use includes não suportados pelo visualizador).
 - Os arquivos `*_full.c` incluem comentários extensos em português explicando cada função e algoritmos.
-
-Observação importante:
-Eu não consigo criar um repositório público no GitHub por você; aqui está um pacote com todos os arquivos. Você pode extrair e subir para seu GitHub facilmente.
-
-Boa sorte na entrega! — Fernando (assistente)
