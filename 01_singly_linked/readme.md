@@ -28,7 +28,7 @@ Array: os elementos ficam em posições contíguas na memória. Acesso é rápid
 Lista encadeada: os elementos podem ficar em qualquer lugar na memória. Inserir e remover é rápido, porque você só muda os ponteiros. Mas o acesso é sequencial — para chegar ao 5º elemento, precisa passar pelos 4 primeiros.
 
 # Principais operações
-a) Inserção
+## a) Inserção
 
 No início:
 
@@ -50,7 +50,7 @@ Faz o ponteiro do último nó atual apontar para o novo nó.
 
 Head -> [20 | *] -> [10 | *] -> [30 | NULL]
 
-b) Remoção
+## b) Remoção
 
 No início:
 
@@ -68,7 +68,7 @@ Faz o ponteiro desse nó apontar para o próximo do nó que será removido.
 
 Libera a memória do nó removido.
 
-c) Busca
+## c) Busca
 
 Começa no primeiro nó e percorre a lista um por um, comparando o dado de cada nó com o valor procurado.
 
