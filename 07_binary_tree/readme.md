@@ -125,6 +125,6 @@ Percorre a árvore de cima para baixo, da esquerda para a direita, usando uma fi
 
 Ordem: 10 → 5 → 15 → 2 → 7
 
-# Segue ilustração abaixo exemplo do funcionamento de uma lista com 3 elementos inseridos:
+# Segue ilustração abaixo exemplo do funcionamento de uma árvore binária com 3 elementos inseridos:
 
 <img width="302" height="615" alt="image" src="https://github.com/user-attachments/assets/056d4203-ff56-450b-998b-2b403b48ce81" />
