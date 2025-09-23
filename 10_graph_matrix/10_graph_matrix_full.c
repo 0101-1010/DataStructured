@@ -11,6 +11,7 @@ typedef struct {
     int **mat;
 } Graph;
 
+/* Criar o grafo */
 Graph* create_graph(int n) {
     Graph *g = malloc(sizeof(Graph));
     g->n = n;
@@ -21,11 +22,13 @@ Graph* create_graph(int n) {
     return g;
 }
 
+/* Adiciona aresta */
 void add_edge(Graph *g, int u, int v) {
     if (u<0||v<0||u>=g->n||v>=g->n) return;
     g->mat[u][v] = 1;
 }
 
+/* Imprimir o grafo */
 void print_graph(Graph *g) {
     for (int i=0;i<g->n;i++) {
         for (int j=0;j<g->n;j++) printf("%d ", g->mat[i][j]);
@@ -33,6 +36,7 @@ void print_graph(Graph *g) {
     }
 }
 
+/* Liberar memória */
 void free_graph(Graph *g) {
     for (int i=0;i<g->n;i++) free(g->mat[i]);
     free(g->mat); free(g);
