@@ -78,6 +78,6 @@ Topo -> NULL
 
 Tentativa de POP em uma pilha vazia → underflow (erro).
 
-# Segue ilustração abaixo exemplo do funcionamento de uma lista com 3 elementos inseridos:
+# Segue ilustração abaixo exemplo do funcionamento de uma pilha com 3 elementos inseridos:
 
 <img width="385" height="243" alt="image" src="https://github.com/user-attachments/assets/276f46ff-a921-44a1-b860-d40f98f1ba95" />
