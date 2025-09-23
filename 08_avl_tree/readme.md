@@ -154,7 +154,7 @@ Pós-ordem (Esquerda → Direita → Root)
 
 Nível a nível (BFS)
 
-# Segue ilustração abaixo exemplo do funcionamento de uma lista com 3 elementos inseridos:
+# Segue ilustração abaixo exemplo do funcionamento de uma árvore balanceada com 3 elementos inseridos:
 
 <img width="310" height="619" alt="image" src="https://github.com/user-attachments/assets/7ac91274-ddcb-40a2-bbd0-e0a435fcfc2e" />
 
