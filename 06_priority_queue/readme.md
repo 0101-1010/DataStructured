@@ -165,6 +165,6 @@ Complexidade: O(log n).
 | Vetor  | O(1)  | O(n) |
 | Heap  | O(log n) | O(n) |
 
-# Segue ilustração abaixo exemplo do funcionamento de uma lista com 3 elementos inseridos:
+# Segue ilustração abaixo exemplo do funcionamento de uma fila prioritária com 3 elementos inseridos:
 
 <img width="773" height="431" alt="image" src="https://github.com/user-attachments/assets/b9829867-4ff5-4525-b0bf-73d5eb01cc39" />
