@@ -5,7 +5,6 @@
 /*
 Fila de prioridade implementada como heap mínimo.
 Operações: push, pop_min.
-Comentários em português explicando sift-up / sift-down.
 */
 
 typedef struct {
@@ -15,6 +14,7 @@ typedef struct {
     int size;
 } PQueue;
 
+/* Criação da fila proritária */
 PQueue* create(int cap) {
     PQueue *q = malloc(sizeof(PQueue));
     q->vals = malloc(sizeof(int)*cap);
@@ -23,11 +23,13 @@ PQueue* create(int cap) {
     return q;
 }
 
+/* Função de troca pela prioridade */
 void swap(PQueue *q, int i, int j) {
     int tv = q->vals[i]; q->vals[i]=q->vals[j]; q->vals[j]=tv;
     int tp = q->prio[i]; q->prio[i]=q->prio[j]; q->prio[j]=tp;
 }
 
+/* Função de empilhar */
 void push(PQueue *q, int v, int p) {
     if (q->size == q->capacity) return;
     int i = q->size++;
@@ -41,6 +43,7 @@ void push(PQueue *q, int v, int p) {
     }
 }
 
+/* Função de ordenar pela prioridade */
 int pop_min(PQueue *q) {
     if (q->size==0) return INT_MIN;
     int res = q->vals[0];
