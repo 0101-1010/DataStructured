@@ -3,7 +3,6 @@
 
 /*
 Pilha usando lista ligada (dinâmica) - operações: push, pop, topo, vazia.
-Comentários em português explicando cada função.
 */
 
 typedef struct Node {
@@ -11,12 +10,14 @@ typedef struct Node {
     struct Node *next;
 } Node;
 
+/* Operação PUSH (empilhar) */
 void push(Node **top, int v) {
     Node *n = malloc(sizeof(Node));
     if (!n) { perror("malloc"); exit(1); }
     n->val = v; n->next = *top; *top = n;
 }
 
+/* Operação POP (desempilhar) */
 int pop(Node **top) {
     if (!*top) { fprintf(stderr, "Pilha vazia\n"); return -1; }
     Node *t = *top;
