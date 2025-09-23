@@ -3,7 +3,6 @@
 
 /*
 Árvore AVL (balanceada) - implementação com rotações, inserção e cálculo de altura/balance.
-Comentários em português explicando cada etapa.
 */
 
 typedef struct Node {
@@ -12,16 +11,20 @@ typedef struct Node {
     int height;
 } Node;
 
+/* Função de altura */
 int height(Node *n) { return n ? n->height : 0; }
 
+/* Criação de um nó novo */
 Node* new_node(int v) {
     Node *n = malloc(sizeof(Node));
     if (!n) { perror("malloc"); exit(1); }
     n->val = v; n->l = n->r = NULL; n->height = 1; return n;
 }
 
+/* retorna o maior entre a e b */
 int max(int a,int b){ return a>b?a:b; }
 
+/* Rotações (balanceamento) */
 Node* right_rotate(Node *y) {
     Node *x = y->l;
     Node *T2 = x->r;
@@ -40,11 +43,13 @@ Node* left_rotate(Node *x) {
     return y;
 }
 
+/* Fator de balanceamento */
 int get_balance(Node *n) {
     if (!n) return 0;
     return height(n->l) - height(n->r);
 }
 
+/* Inserção em AVL */
 Node* insert(Node *node, int key) {
     if (!node) return new_node(key);
     if (key < node->val) node->l = insert(node->l, key);
@@ -69,8 +74,10 @@ Node* insert(Node *node, int key) {
     return node;
 }
 
+/* Travessia em-ordem */
 void inorder(Node *n) { if (!n) return; inorder(n->l); printf("%d ", n->val); inorder(n->r); }
 
+/* Liberação da memória */
 void free_tree(Node *n) { if (!n) return; free_tree(n->l); free_tree(n->r); free(n); }
 
 int main() {
