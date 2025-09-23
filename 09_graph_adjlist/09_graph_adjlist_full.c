@@ -11,17 +11,20 @@ typedef struct Edge {
     struct Edge *next;
 } Edge;
 
+/* Criar uma nova aresta */
 Edge* new_edge(int to) {
     Edge *e = malloc(sizeof(Edge));
     if (!e) { perror("malloc"); exit(1); }
     e->to = to; e->next = NULL; return e;
 }
 
+/* Adicionar aresta */
 void add_edge(Edge **adj, int u, int v) {
     Edge *e = new_edge(v);
     e->next = adj[u]; adj[u] = e;
 }
 
+/* Imprimir o grafo */
 void print_graph(Edge **adj, int n) {
     for (int i=0;i<n;i++) {
         printf("%d: ", i);
@@ -30,6 +33,7 @@ void print_graph(Edge **adj, int n) {
     }
 }
 
+/* Liberar memória */
 void free_graph(Edge **adj, int n) {
     for (int i=0;i<n;i++) {
         Edge *e = adj[i];
