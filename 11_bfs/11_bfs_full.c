@@ -7,9 +7,13 @@ Retorna ordem de visita a partir de fuente s.
 */
 
 typedef struct Edge { int to; struct Edge* next; } Edge;
+/* Criar uma nova aresta */
 Edge* new_edge(int to) { Edge *e = malloc(sizeof(Edge)); e->to=to; e->next=NULL; return e; }
+
+/* Adicionar aresta */
 void add_edge(Edge **adj, int u, int v) { Edge *e = new_edge(v); e->next = adj[u]; adj[u] = e; }
 
+/* BFS – Busca em Largura */
 void bfs(Edge **adj, int n, int s) {
     int *vis = calloc(n, sizeof(int));
     int *q = malloc(sizeof(int)*n);
@@ -25,6 +29,7 @@ void bfs(Edge **adj, int n, int s) {
     free(vis); free(q);
 }
 
+/* Liberar memória do grafo */
 void free_graph(Edge **adj, int n) {
     for (int i=0;i<n;i++) { Edge *e = adj[i]; while (e){ Edge *t=e->next; free(e); e=t;} }
 }
