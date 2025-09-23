@@ -67,7 +67,7 @@ Apenas consulta o valor que está no início da fila (sem remover).
 
 Exemplo: na fila [20] -> [30], o peek() retorna 20.
 
-# Segue ilustração abaixo exemplo do funcionamento de uma lista com 3 elementos inseridos:
+# Segue ilustração abaixo exemplo do funcionamento de uma fila com 3 elementos inseridos:
 
 <img width="330" height="328" alt="image" src="https://github.com/user-attachments/assets/8afc02d1-7615-48f3-99d2-2f41710c32b0" />
 
