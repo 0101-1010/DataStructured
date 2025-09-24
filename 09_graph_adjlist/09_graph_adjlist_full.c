@@ -1,52 +1,71 @@
-#include <stdio.h>
-#include <stdlib.h>
+#include <stdio.h>   // Biblioteca para entrada/saída (printf)
+#include <stdlib.h>  // Biblioteca para alocação dinâmica (malloc, calloc, free)
 
 /*
-Grafo com lista de adjacência dinâmico.
-Operações: adicionar aresta, imprimir, liberar.
+Grafo com lista de adjacência dinâmica:
+- Permite adicionar arestas
+- Imprimir o grafo
+- Liberar memória alocada
 */
 
+// Estrutura que representa uma aresta em lista encadeada
 typedef struct Edge {
-    int to;
-    struct Edge *next;
+    int to;              // Vértice de destino
+    struct Edge *next;   // Próximo nó na lista de adjacência
 } Edge;
 
-/* Criar uma nova aresta */
+/* Cria uma nova aresta */
 Edge* new_edge(int to) {
-    Edge *e = malloc(sizeof(Edge));
-    if (!e) { perror("malloc"); exit(1); }
-    e->to = to; e->next = NULL; return e;
+    Edge *e = malloc(sizeof(Edge));        // Aloca memória
+    if (!e) { perror("malloc"); exit(1); } // Verifica falha de alocação
+    e->to = to;                             // Define destino da aresta
+    e->next = NULL;                         // Inicializa próximo como NULL
+    return e;                               // Retorna ponteiro para aresta
 }
 
-/* Adicionar aresta */
+/* Adiciona uma aresta do vértice u para v */
 void add_edge(Edge **adj, int u, int v) {
-    Edge *e = new_edge(v);
-    e->next = adj[u]; adj[u] = e;
+    Edge *e = new_edge(v);   // Cria nova aresta
+    e->next = adj[u];        // Encadeia na lista existente do vértice u
+    adj[u] = e;              // Atualiza início da lista do vértice u
 }
 
-/* Imprimir o grafo */
+/* Imprime todas as listas de adjacência do grafo */
 void print_graph(Edge **adj, int n) {
-    for (int i=0;i<n;i++) {
-        printf("%d: ", i);
-        for (Edge *e = adj[i]; e; e = e->next) printf("%d ", e->to);
-        printf("\n");
+    for (int i=0;i<n;i++) {              // Para cada vértice
+        printf("%d: ", i);               // Imprime índice do vértice
+        for (Edge *e = adj[i]; e; e = e->next) // Percorre lista de adjacência
+            printf("%d ", e->to);        // Imprime vértice de destino
+        printf("\n");                     // Quebra de linha após cada vértice
     }
 }
 
-/* Liberar memória */
+/* Libera toda memória alocada para o grafo */
 void free_graph(Edge **adj, int n) {
-    for (int i=0;i<n;i++) {
+    for (int i=0;i<n;i++) {             // Para cada lista de adjacência
         Edge *e = adj[i];
-        while (e) { Edge *t = e->next; free(e); e = t; }
+        while (e) {                      // Percorre lista
+            Edge *t = e->next;           // Guarda próximo
+            free(e);                     // Libera aresta atual
+            e = t;                       // Vai para próximo
+        }
     }
 }
 
 int main() {
-    int n = 4;
-    Edge **adj = calloc(n, sizeof(Edge*));
-    add_edge(adj, 0, 1); add_edge(adj, 0, 2);
-    add_edge(adj, 1, 2); add_edge(adj, 2, 3);
-    print_graph(adj, n);
-    free_graph(adj, n); free(adj);
-    return 0;
+    int n = 4;                           // Número de vértices
+    Edge **adj = calloc(n, sizeof(Edge*)); // Array de ponteiros inicializados com NULL
+
+    // Adiciona algumas arestas
+    add_edge(adj, 0, 1); 
+    add_edge(adj, 0, 2);
+    add_edge(adj, 1, 2); 
+    add_edge(adj, 2, 3);
+
+    print_graph(adj, n);                 // Imprime grafo
+
+    free_graph(adj, n);                  // Libera memória das listas
+    free(adj);                           // Libera array de ponteiros
+
+    return 0;                             // Programa terminou com sucesso
 }
